@@ -1,0 +1,25 @@
+GET http://localhost:3000/books/
+
+### 
+GET http://localhost:3000/books/63d3f6bfabb0f63222d04edc/
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "description": "A coming-of-age story set in the South during the 1930s, the novel explores themes of racial injustice and the loss of innocence through the eyes of Scout Finch, a young girl growing up in Alabama."
+}
+
+###
+DELETE http://localhost:3000/books/63d373909f1fe370b3826f34/
+
+###
+PATCH http://localhost:3000/books/63d3731cb559ea50127f6f19/
+Content-Type: application/json
+
+{
+    "title": "Madolduwa"
+}

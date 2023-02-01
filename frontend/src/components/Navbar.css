@@ -1,0 +1,26 @@
+/* Side Navbar */
+nav {
+  position: fixed; /* fix the position of the navbar */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 200px; /* set the width of the navbar */
+  padding: 10px;
+  width: 200px;
+  position: fixed;
+  height: 100vh;
+  background-color: #8a2be2;
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+  padding: 10 100 10 100;
+  margin: 0;
+
+}
+
+nav ul li {
+  margin: 20px 0;
+}
+
