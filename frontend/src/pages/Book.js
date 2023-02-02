@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import BookCard from '../components/BookCard';
 
-function Book() {
+export default function Book() {
   const [data, setData] = useState(null);
   const [number, setNumber] = useState(1);
 
@@ -41,5 +41,4 @@ function Book() {
   );
 }
 
-export default Book;
 

@@ -29,7 +29,7 @@ const styles = {
   },
 };
 
-function BookCard({ number, title, author, description }) {
+export default function BookCard({ number, title, author, description }) {
   return (
     <div style={styles.container}>
       <div style={styles.header}>
@@ -42,4 +42,3 @@ function BookCard({ number, title, author, description }) {
   );
 }
 
-export default BookCard;

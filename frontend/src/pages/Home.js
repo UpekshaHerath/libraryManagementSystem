@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import './Home.css';
+import ControlledCarousel from "../components/ControlledCarousel";
 
 function Home() {
     return (
-      <div className="home-content">
-        <h1>Welcome to the Library Management System</h1>
-        <p>Search, borrow, and manage your books here</p>
-        <button>Start exploring</button>
+      <div style={{ padding: "0px 100px 0px 100px", maxHeight: "100%vh" }}>
+        <ControlledCarousel />
       </div>
     );
   }
