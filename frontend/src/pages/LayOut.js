@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Button, Stack } from "react-bootstrap";
 import { Link, Outlet } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function LayOut() {
@@ -14,6 +15,7 @@ export default function LayOut() {
       <Button variant="primary" onClick={handleShow}>
         Launch Side Bar
       </Button>
+
       <Outlet />
 
       <Offcanvas show={show} onHide={handleClose}>
@@ -21,8 +23,10 @@ export default function LayOut() {
           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <Link to="/">Home</Link>
-          <Link to="/books">Books</Link>
+          <Nav defaultActiveKey="/home" className="flex-column">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/books">Books</Nav.Link>
+          </Nav>
         </Offcanvas.Body>
       </Offcanvas>
     </div>
