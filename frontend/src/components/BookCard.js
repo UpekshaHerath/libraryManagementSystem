@@ -1,20 +1,48 @@
 import React from "react";
 
-const styles = {
+export default function BookCard({ number, title, author, description }) {
+  function onClick() {
+    console.log("hi");
+  }
+  return (
+    <div style={style.finalContainer}>
+      <div style={style.container} onClick={onClick}>
+        <div style={style.header}>
+          <p style={style.title}>{title}</p>
+          <p style={style.author}>{author}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const style = {
+  finalContainer: {
+    display: "flex",
+    justifyContent: "center",
+    perspective: "1000px",
+  },
   container: {
-    backgroundColor: "#fafafa",
-    boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.25)",
-    borderRadius: "10px",
-    padding: "20px",
-    width: "800px",
-    margin: "20px auto",
+    display: "inline-block",
+    width: "70%",
+    margin: "1%",
+    padding: "1%",
+    border: "1px solid #ccc",
+    borderRadius: "5px",
     textAlign: "center",
+    transition: "all 0.3s ease-in-out",
+    transformStyle: "preserve-3d",
+    "&:hover": {
+      transform: "rotateY(15deg) scale(1.05)",
+      boxShadow: "0px 0px 10px #ccc",
+      cursor: "pointer",
+    },
   },
   header: {
     display: "flex",
-    flexDirection: "column",
+    justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: "20px",
+    marginBottom: "1%",
   },
   title: {
     margin: "0",
@@ -24,21 +52,8 @@ const styles = {
     color: "gray",
   },
   description: {
+    margin: "0",
     fontSize: "14px",
-    color: "gray",
+    textAlign: "justify",
   },
 };
-
-export default function BookCard({ number, title, author, description }) {
-  return (
-    <div style={styles.container}>
-      <div style={styles.header}>
-        <h3>{number}</h3>
-        <h3 style={styles.title}>{title}</h3>
-        <h5 style={styles.author}>{author}</h5>
-      </div>
-      <p style={styles.description}>{description}</p>
-    </div>
-  );
-}
-

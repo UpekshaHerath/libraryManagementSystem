@@ -4,6 +4,7 @@ import { Button, Stack } from "react-bootstrap";
 import { Link, Outlet } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { FaBars } from "react-icons/fa";
 
 export default function LayOut() {
   const [show, setShow] = useState(false);
@@ -11,10 +12,11 @@ export default function LayOut() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <div className="app">
-      <Button variant="primary" onClick={handleShow}>
-        Launch Side Bar
-      </Button>
+    <div>
+      <div onClick={handleShow}  style={headerBarStyling}>
+          <FaBars />
+          <h2>Library Management System</h2>
+      </div>
 
       <Outlet />
 
@@ -31,4 +33,13 @@ export default function LayOut() {
       </Offcanvas>
     </div>
   );
+}
+
+const headerBarStyling = {
+  padding: '30px', 
+  fontSize: '22px', 
+  display: 'flex', 
+  flexDirection: 'row', 
+  justifyContent: 'space-between', 
+  backgroundColor: '#4ee6d4'
 }
