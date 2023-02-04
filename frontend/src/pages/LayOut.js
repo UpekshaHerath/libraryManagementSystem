@@ -20,14 +20,16 @@ export default function LayOut() {
 
       <Outlet />
 
-      <Offcanvas show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+      <Offcanvas show={show} onHide={handleClose} style={{backgroundColor: "#31d2f2"}}>
+        <Offcanvas.Header closeButton >
+          <Offcanvas.Title style={{ fontSize: "40px"}}>LMS</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
+        <Offcanvas.Body style={{color: "black"}}>
           <Nav defaultActiveKey="/home" className="flex-column">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/books">Books</Nav.Link>
+            <Nav.Link href="/"  style={{color: "black"}}>Home</Nav.Link>
+            <Nav.Link href="/books"  style={{color: "black"}}>Books</Nav.Link>
+            <Nav.Link href="/books/new"  style={{color: "black"}}>New Book</Nav.Link>
+            <Nav.Link href="/borrowed"  style={{color: "black"}}>Borrowed Books</Nav.Link>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>
