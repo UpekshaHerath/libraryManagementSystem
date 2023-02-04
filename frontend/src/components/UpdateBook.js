@@ -1,29 +1,42 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 
-export default function NewBook() {
+export default function UpdateBook() {
+  const [data, setData] = useState(null);
+
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  async function makeGetRequest(url) {
     try {
-      const response = await axios.post('http://localhost:3000/books/', { title, author, description });
-      setTitle("");
-      setAuthor("");
-      setDescription("");
+      const response = await axios.get(url);
       console.log(response.data);
+      return response.data;
     } catch (error) {
       console.error(error);
     }
-  };
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      const url = window.location.href;
+      console.log(url);
+      const responseData = await makeGetRequest(url);
+      setData(responseData);
+    }
+    fetchData();
+  }, []);
+
+  function handleSubmit() {
+
+  }
 
   return (
     <div style={{ padding: "50px", margin: "100px 150px 0px 150px" }}>
-      <h2 style={{ textAlign: "center" }}>Add New Book</h2>
+      <h2 style={{ textAlign: "center" }}>Update Book</h2>
       <br />
       <br />
       <Form onSubmit={handleSubmit}>
@@ -59,7 +72,7 @@ export default function NewBook() {
           Submit
         </Button>
       </Form>
+     
     </div>
   );
 }
-

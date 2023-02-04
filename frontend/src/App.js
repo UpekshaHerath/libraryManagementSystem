@@ -11,8 +11,8 @@ import NoPage from "./pages/NoPage";
 import Home from "./pages/Home";
 import Book from "./pages/Book";
 import LayOut from "./pages/LayOut";
-import NewBook from "./components/NewBook";
 import BorrowedBook from "./pages/BorrowedBook";
+import UpdateBook from "./components/UpdateBook";
 
 export default function App() {
   const router = createBrowserRouter(
@@ -20,7 +20,7 @@ export default function App() {
       <Route path="/" element={<LayOut />}>
         <Route index element={<Home />} />
         <Route path="/books" element={<Book />} />
-        <Route path="/books/new" element={<NewBook />} />
+        <Route path="/books/update/:id" element={<UpdateBook />} />
         <Route path="/borrowed" element={<BorrowedBook />} />
       </Route>
     )
