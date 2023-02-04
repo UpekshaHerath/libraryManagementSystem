@@ -1,4 +1,4 @@
-GET http://localhost:3000/books/
+GET http://localhost:3000/books/count
 
 ### 
 GET http://localhost:3000/books/63d3f6bfabb0f63222d04edc/
@@ -14,7 +14,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/books/63dc0e46afdc769c118dd38f/
+DELETE http://localhost:3000/books/63dc0e78afdc769c118dd393/
 
 ###
 PATCH http://localhost:3000/books/63d3731cb559ea50127f6f19/

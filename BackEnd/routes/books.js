@@ -12,6 +12,18 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Getting the number of books
+router.get("/count", async (req, res) => {
+  try {
+    const count = await book.countDocuments({})
+    res.json([{"bookCount": count}]);
+    console.log('Number of documents in the User collection:', count)
+  
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+})
+
 // Getting one
 router.get("/:id", getBook, (req, res) => {
   res.json(res.book);
