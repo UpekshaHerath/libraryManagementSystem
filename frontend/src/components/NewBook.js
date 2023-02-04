@@ -12,6 +12,9 @@ export default function NewBook() {
     event.preventDefault();
     try {
       const response = await axios.post('http://localhost:3000/books/', { title, author, description });
+      setTitle("");
+      setAuthor("");
+      setDescription("");
       console.log(response.data);
     } catch (error) {
       console.error(error);
@@ -52,7 +55,7 @@ export default function NewBook() {
           }}
         />
         <br />
-        <Button variant="primary" type="submit">
+        <Button variant="info" type="submit">
           Submit
         </Button>
       </Form>

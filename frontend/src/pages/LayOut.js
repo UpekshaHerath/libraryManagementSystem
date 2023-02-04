@@ -13,9 +13,9 @@ export default function LayOut() {
   const handleShow = () => setShow(true);
   return (
     <div>
-      <div onClick={handleShow}  style={headerBarStyling}>
-          <FaBars />
-          <h2>Library Management System</h2>
+      <div onClick={handleShow} style={headerBarStyling}>
+        <FaBars style={{fontSize: "40px"}} />
+        <h2>Library Management System</h2>
       </div>
 
       <Outlet />
@@ -36,10 +36,10 @@ export default function LayOut() {
 }
 
 const headerBarStyling = {
-  padding: '30px', 
-  fontSize: '22px', 
-  display: 'flex', 
-  flexDirection: 'row', 
-  justifyContent: 'space-between', 
-  backgroundColor: '#4ee6d4'
-}
+  padding: "20px",
+  fontSize: "20px",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  backgroundColor: "#31d2f2",
+};
