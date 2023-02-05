@@ -15,18 +15,26 @@ router.get("/", async (req, res) => {
 // Getting the number of books
 router.get("/count", async (req, res) => {
   try {
-    const count = await book.countDocuments({})
-    res.json([{"bookCount": count}]);
-    console.log('Number of documents in the User collection:', count)
-  
+    const count = await book.countDocuments({});
+    res.json([{ bookCount: count }]);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
-})
+});
 
 // Getting one
 router.get("/:id", getBook, (req, res) => {
   res.json(res.book);
+});
+
+// Getting borrowed books
+router.get("/borrowedBooks", async (req, res) => {
+  try {
+    const booksn = await book.find();
+    res.json(booksn);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 });
 
 // Creating one
@@ -68,7 +76,7 @@ router.patch("/:id", getBook, async (req, res) => {
 router.delete("/:id", getBook, async (req, res) => {
   try {
     await res.book.remove();
-    res.json({ message: 'Deleted book'});
+    res.json({ message: "Deleted book" });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -77,18 +85,16 @@ router.delete("/:id", getBook, async (req, res) => {
 // middle where for the endpoints which have to pass the id as the parameter
 async function getBook(req, res, next) {
   let newBook;
-    try {
-      newBook = await book.findById(req.params.id);
-        if (newBook == null) {
-          return res.status(404).json({ message: 'Can not find book'});
-        }
-    } catch (err) {
-        return res.status(500).json({ message: err.message });
+  try {
+    newBook = await book.findById(req.params.id);
+    if (newBook == null) {
+      return res.status(404).json({ message: "Can not find book" });
     }
-    res.book = newBook;
-    next();
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+  res.book = newBook;
+  next();
 }
-
-
 
 module.exports = router;

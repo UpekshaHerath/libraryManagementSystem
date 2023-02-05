@@ -12,7 +12,12 @@ const bookSchema = new mongoose.Schema({
     description: {
         type: String,
         required: true,
-    }
+    },
+    isBorrowed: {
+        type: Boolean,
+        required: false,
+        default: false
+      }
 })
 
 module.exports = mongoose.model('book', bookSchema);

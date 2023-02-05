@@ -1,5 +1,11 @@
 GET http://localhost:3000/books/count
 
+###
+GET http://localhost:3000/books/
+
+###
+GET http://localhost:3000/books/borrowedBooks
+
 ### 
 GET http://localhost:3000/books/63d3f6bfabb0f63222d04edc/
 
