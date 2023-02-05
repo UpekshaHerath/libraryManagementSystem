@@ -5,6 +5,10 @@ import { Link, Outlet } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaBars } from "react-icons/fa";
+import {AiFillHome} from "react-icons/ai";
+import {FaBook} from "react-icons/fa";
+import {ImBooks} from "react-icons/im";
+import {RiLogoutBoxFill} from "react-icons/ri";
 
 export default function LayOut() {
   const [show, setShow] = useState(false);
@@ -25,11 +29,11 @@ export default function LayOut() {
           <Offcanvas.Title style={{ fontSize: "40px"}}>LMS</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body style={{color: "black"}}>
-          <Nav defaultActiveKey="/home" className="flex-column">
-            <Nav.Link href="/"  style={{color: "black"}}>Home</Nav.Link>
-            <Nav.Link href="/books"  style={{color: "black"}}>Books</Nav.Link>
-            <Nav.Link href="/books/new"  style={{color: "black"}}>New Book</Nav.Link>
-            <Nav.Link href="/borrowed"  style={{color: "black"}}>Borrowed Books</Nav.Link>
+          <Nav defaultActiveKey="/home" className="flex-column" style={{padding: "20px"}}>
+            <Nav.Link href="/home"  style={{color: "black", padding: "20px"}}><AiFillHome />{"   "}Home</Nav.Link>
+            <Nav.Link href="/books"  style={{color: "black", padding: "20px"}}><FaBook />{"   "}Books</Nav.Link>
+            <Nav.Link href="/borrowed"  style={{color: "black", padding: "20px"}}><ImBooks />{"   "}Borrowed Books</Nav.Link>
+            <Nav.Link href="/"  style={{color: "black", padding: "20px"}}><RiLogoutBoxFill />{"   "}Logout</Nav.Link>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>

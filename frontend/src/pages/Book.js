@@ -22,6 +22,7 @@ import Modal from "react-bootstrap/Modal";
 export default function Book() {
   const [data, setData] = useState(null);
   const [numberOfBooks, setNumberOfBooks] = useState("");
+  // const [setUpdating]
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const [newShow, setNewShow] = useState(false);
@@ -176,7 +177,7 @@ export default function Book() {
                     </Form>
                   </Modal.Body>
                   <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button variant="secondary" onClick={handleCloseNew}>
                       Close
                     </Button>
                     <Button variant="info" type="submit" onClick={handleSubmit}>
@@ -259,7 +260,7 @@ export default function Book() {
                         type="submit"
                         onClick={handleChangeSubmit}
                       >
-                        Add
+                        Update
                       </Button>
                     </Modal.Footer>
                   </Modal>
