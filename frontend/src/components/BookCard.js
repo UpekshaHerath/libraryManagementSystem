@@ -19,6 +19,7 @@ export default function BookCard({ number, title, author, description }) {
 const style = {
   finalContainer: {
     display: "flex",
+    alignItems: "center",
     justifyContent: "center",
     perspective: "1000px",
   },

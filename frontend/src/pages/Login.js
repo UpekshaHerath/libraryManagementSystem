@@ -11,7 +11,7 @@ export default function Login() {
   function submit() {
     console.log(email);
     console.log(password);
-    if (email == "abc@gmail.com" && password == "abc") {
+    if (email === "abc@gmail.com" && password === "abc") {
         console.log("Ok");
         navigate("/home");
     } else {
@@ -25,20 +25,25 @@ export default function Login() {
       style={{
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
-        padding: "20px",
-        maxWidth: "300px",
+        alignItems: "center",
+        height: "100vh",
+        fontSize: "20px",
+        paddingTop: "100px",
+        boarder: "2px solid black"
       }}
     >
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)}/>
+        <Form.Control type="email" style={{width: "600px", fontSize: "17px"}} placeholder="Enter email" onChange={(e) => setEmail(e.target.value)}/>
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
+        <Form.Control type="password" style={{width: "600px", fontSize: "17px"}} placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
       </Form.Group>
-      <Button variant="info" type="submit">
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label></Form.Label>
+      </Form.Group>
+      <Button variant="info" type="submit" style={{width: "600px", fontSize: "17px"}}>
         Login
       </Button>
     </Form>

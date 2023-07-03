@@ -6,23 +6,16 @@ import { Container } from "react-bootstrap";
 import { FaTrash, FaBook, FaPlus, FaEdit } from "react-icons/fa";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
-import { Link } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import {
-  createBrowserRouter,
-  Route,
-  createRoutesFromElements,
-  RouterProvider,
   useNavigate,
 } from "react-router-dom";
-import UpdateBook from "../components/UpdateBook";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 
 export default function Book() {
   const [data, setData] = useState(null);
   const [numberOfBooks, setNumberOfBooks] = useState("");
-  // const [setUpdating]
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const [newShow, setNewShow] = useState(false);
@@ -36,7 +29,9 @@ export default function Book() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
+  const [newField, setNewField] = useState(""); // this is the new field 
 
+  // post a book to the backend 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -49,15 +44,12 @@ export default function Book() {
       setAuthor("");
       setDescription("");
       console.log(response.data);
-      window.location.reload();
     } catch (error) {
       console.error(error);
     }
   };
 
-  const handleChangeSubmit = async (event) => {
-
-  }
+  const handleChangeSubmit = async (event) => {};
 
   async function makeGetRequest(url) {
     try {
@@ -80,7 +72,7 @@ export default function Book() {
     }
 
     fetchData();
-  }, []);
+  }); // changed this place
 
   async function deleteTheRecord(Delete_id) {
     axios
@@ -93,9 +85,6 @@ export default function Book() {
         console.log(error);
       });
   }
-
-
-
 
   const cardStyles = {
     container: {
@@ -168,6 +157,16 @@ export default function Book() {
                         as="textarea"
                         value={description}
                         placeholder="Description"
+                        rows={3}
+                        onChange={(e) => {
+                          setDescription(e.target.value);
+                        }}
+                      />
+                      <br />
+                      <Form.Control
+                        as="textarea"
+                        value={newField}
+                        placeholder="New Value"
                         rows={3}
                         onChange={(e) => {
                           setDescription(e.target.value);

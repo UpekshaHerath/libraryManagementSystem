@@ -18,12 +18,6 @@ import Login from "./pages/Login";
 export default function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      // <Route path="/" element={<LayOut />}>
-      //   <Route index element={<Home />} />
-      //   <Route path="/books" element={<Book />} />
-      //   <Route path="/books/update/:id" element={<UpdateBook />} />
-      //   <Route path="/borrowed" element={<BorrowedBook />} />
-      // </Route>
       <Route path="/" element={<LayOut />}>
         <Route index element={<Login />} />
         <Route path="/home" element={<Home />} />
