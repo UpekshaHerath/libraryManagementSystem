@@ -7,20 +7,20 @@ GET http://localhost:3000/books/
 GET http://localhost:3000/books/borrowedBooks
 
 ### 
-GET http://localhost:3000/books/63d3f6bfabb0f63222d04edc/
+GET http://localhost:3000/books/63dfcd47d2d4e4a1908f4aee/
 
 ###
 POST http://localhost:3000/books/
 Content-Type: application/json
 
 {
-    "title": "To Kill a Mockingbird",
-    "author": "Harper Lee",
+    "title": "Madolduwa",
+    "author": "Martin wikramasinghe",
     "description": "A coming-of-age story set in the South during the 1930s, the novel explores themes of racial injustice and the loss of innocence through the eyes of Scout Finch, a young girl growing up in Alabama."
-}
+}   
 
 ###
-DELETE http://localhost:3000/books/63dc0e78afdc769c118dd393/
+DELETE http://localhost:3000/books/63ea500c6a43761559922288/
 
 ###
 PATCH http://localhost:3000/books/63d3731cb559ea50127f6f19/
