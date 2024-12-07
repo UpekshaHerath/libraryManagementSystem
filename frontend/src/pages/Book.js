@@ -163,16 +163,7 @@ export default function Book() {
                         }}
                       />
                       <br />
-                      <Form.Control
-                        as="textarea"
-                        value={newField}
-                        placeholder="New Value"
-                        rows={3}
-                        onChange={(e) => {
-                          setDescription(e.target.value);
-                        }}
-                      />
-                      <br />
+                      
                     </Form>
                   </Modal.Body>
                   <Modal.Footer>
